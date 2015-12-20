@@ -1,3 +1,9 @@
+# AngularJS: Stateful Modals with UI Router
+_by Gary Pang, "CodeWritingCow"_
+
+From the SitePoint tutorial, ["Creating Stateful Modals in AngularJS with Angular UI Router"](http://www.sitepoint.com/creating-stateful-modals-angularjs-angular-ui-router)
+
+
 # angular-js-stateful-modals-with-ui-router
 
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
