@@ -28,23 +28,23 @@ angular
               }
           },
           // Closes modal if user clicks outside or presses ESC
-          onEnter: ["$state", function($state) {
-              $(document).on("keyup", function(e) {
-                  if(e.keyCode == 27) {
+          onEnter: ["$state", function ($state) {
+              $(document).on("keyup", function (e) {
+                  if (e.keyCode == 27) {
                       $(document).off("keyup");
                       $state.go("Default");
                   }
               });
 
-              $(document).on("click", ".Modal-backdrop, .Modal-holder", function(){
+              $(document).on("click", ".Modal-backdrop, .Modal-holder", function () {
                   $state.go("Default");
               });
 
               // Prevents modal from closing if user clicks inside
-              $(document).on("click", ".Modal-box, .Modal-box *", function(e){
+              $(document).on("click", ".Modal-box, .Modal-box *", function (e) {
                   e.stopPropagation();
               });
-          }],
+          } ],
           abstract: true
       });
 
@@ -52,6 +52,14 @@ angular
           views: {
               "modal": {
                   templateUrl: "modals/confirm.html"
+              }
+          }
+      });
+
+      $stateProvider.state("Modal.successfullyAdded", {
+          views: {
+              "modal": {
+                  templateUrl: "modals/success.html"
               }
           }
       });
