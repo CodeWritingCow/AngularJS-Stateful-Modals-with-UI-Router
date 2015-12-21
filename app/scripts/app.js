@@ -18,19 +18,21 @@ angular
     'ngTouch',
     'ui.router'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
-      .otherwise({
-        redirectTo: '/'
+  .config(function ($stateProvider) {
+      $stateProvider.state("Modal", {
+          views: {
+              "modal": {
+                  templateUrl: "modal.html"
+              }
+          },
+          abstract: true
       });
-  });
+      
+      $stateProvider.state("Modal.confirmAddToCart", {
+          views: {
+              "modal": {
+                  templateUrl: "modals/confirm.html"
+              }
+          }
+      });
+});
